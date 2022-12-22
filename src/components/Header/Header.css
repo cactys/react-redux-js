@@ -1,0 +1,47 @@
+.header {
+  margin: 0 0 40px;
+  margin-top: 45px;
+  min-height: 74px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header__navigator {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.header__item {
+  list-style: none;
+  padding: 0 10px;
+  border-left: 1px solid rgba(84, 84, 84, 0.7);
+  border-right: 1px solid rgba(84, 84, 84, 0.7);
+}
+
+.header__button {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.header__link {
+  text-decoration: none;
+  color: inherit;
+}

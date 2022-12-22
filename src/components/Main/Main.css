@@ -1,0 +1,10 @@
+.content {
+  padding: 5px 12px 0;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(84, 84, 84, 0.7);
+  border-radius: 5px;
+  border: 1px solid #fff;
+  box-shadow: inset 0px 0px 3px #FFFFFF;
+}
