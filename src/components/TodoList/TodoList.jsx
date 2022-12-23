@@ -1,19 +1,28 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Todo from '../Todo/Todo';
 import './TodoList.css';
 
-const TodoList = ({ todos, toggleTodoCompleted, removeTodo }) => {
+const TodoList = () => {
+  const todos = useSelector((state) => state.todos.todos);
+
   return (
-    <ul className="todo-list">
-      {todos.map((todo) => (
-        <Todo
-          key={todo.id}
-          todo={todo}
-          toggleTodoCompleted={toggleTodoCompleted}
-          removeTodo={removeTodo}
-        />
-      ))}
-    </ul>
+    <>
+      {todos.length ? (
+        <ul className="todo-list">
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              {...todo}
+            />
+          ))}
+        </ul>
+      ) : (
+        <div className="todo-list__void">
+          <p className="todo-list__text">Задачи отсутствуют</p>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,12 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeTodo, toggleTodoCompleted } from '../../store/todoSlice';
 
-const Todo = ({ todo, toggleTodoCompleted, removeTodo }) => {
-  const handleRemoveTodo = () => {
-    removeTodo(todo.id);
+const Todo = ({ id, completed, text }) => {
+  const dispatch = useDispatch();
+
+  const removeTask = () => {
+    dispatch(removeTodo({ id }));
   };
 
-  const handleTodoCompleted = () => {
-    toggleTodoCompleted(todo.id);
+  const toggleTask = () => {
+    dispatch(toggleTodoCompleted({ id }));
   };
 
   return (
@@ -14,24 +18,20 @@ const Todo = ({ todo, toggleTodoCompleted, removeTodo }) => {
       <label className="todo-list__label">
         <input
           type="checkbox"
-          onChange={handleTodoCompleted}
-          checked={todo.completed}
+          onChange={toggleTask}
+          checked={completed}
           className="todo-list__checkbox"
         />
         <span className="todo-list__checkbox-bubble" />
       </label>
       <p
         className={`todo-list__text ${
-          todo.completed ? 'todo-list__text_crossed' : ''
+          completed ? 'todo-list__text_crossed' : ''
         }`}
       >
-        {todo.text}
+        {text}
       </p>
-      <button
-        type="button"
-        className="todo-list__button"
-        onClick={handleRemoveTodo}
-      >
+      <button type="button" className="todo-list__button" onClick={removeTask}>
         &times; удалить
       </button>
     </li>

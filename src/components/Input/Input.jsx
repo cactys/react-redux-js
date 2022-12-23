@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({ value, setText, addTodo }) => {
+const Input = ({ value, setText, addTask }) => {
   const handleInputTodo = (evt) => {
     setText(evt.target.value);
   };
@@ -21,7 +21,7 @@ const Input = ({ value, setText, addTodo }) => {
           placeholder="Задача"
           name="todo"
         />
-        <button type="submit" onClick={addTodo} className="input__add-button">
+        <button type="submit" onClick={addTask} className="input__add-button">
           Добавить запись
         </button>
       </form>

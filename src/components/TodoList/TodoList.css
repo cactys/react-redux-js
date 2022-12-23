@@ -73,6 +73,11 @@
   text-decoration: line-through;
 }
 
+
+.todo-list__void {
+  padding: 18px 0 17px;
+}
+
 .todo-list__button {
   display: inline-block;
   text-align: center;
